@@ -16,6 +16,12 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+from simpleRest.views import hello_world, root_page, random_number, export_pin
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^helloworld$', hello_world),
+    url(r'^$', root_page),
+    url(r'^random/(\d+)/$', random_number),
+    url(r'^export/(\d+)/$', export_pin)
 ]
